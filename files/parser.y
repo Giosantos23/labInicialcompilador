@@ -7,7 +7,6 @@ int lineno = 1;
 void yyerror(const char *s);
 int yylex(void);
 
-// Estructura para la tabla de símbolos
 struct symbol {
     char *name;
     double value;
@@ -16,7 +15,6 @@ struct symbol {
 
 struct symbol *sym_table = NULL;
 
-// Funciones para manejar la tabla de símbolos
 struct symbol *lookup(char *name);
 void insert(char *name, double value);
 %}
@@ -101,7 +99,6 @@ factor:
 
 %%
 
-// Implementación de la tabla de símbolos
 struct symbol *lookup(char *name) {
     struct symbol *s;
     for (s = sym_table; s != NULL; s = s->next) {

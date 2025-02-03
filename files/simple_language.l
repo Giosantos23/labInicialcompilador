@@ -7,7 +7,7 @@ void yyerror(char *);
 %%
 [a-zA-Z]       { yylval = *yytext - 'a'; return VARIABLE; }
 [0-9]+         { yylval = atoi(yytext); return NUMBER; }
-[ \t]          ; /* Ignorar espacios en blanco y tabulaciones */
+[ \t]          ; 
 \n             { return '\n'; }
 "+"            { return '+'; }
 "-"            { return '-'; }

@@ -31,7 +31,7 @@ void yyerror(const char *s);
 ")"           { return RPAREN; }
 ";"           { return SEMICOLON; }
 [\n]          { lineno++; }
-[ \t]         ; /* Ignorar espacios en blanco */
+[ \t]         ; 
 .             { 
     char msg[100];
     sprintf(msg, "Token inválido: %s", yytext);
